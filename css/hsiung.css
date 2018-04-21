@@ -1,0 +1,389 @@
+/*↓重置歸零css*/
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline; /*垂直對齊方式,baseline:默認,元素放置在父元素的基線上。*/
+    -webkit-box-sizing: border-box; /*元素指定的任何內邊距和邊框都將在已設定的寬度和高度內進行繪製*/
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style-type: none;  /*使list前面沒有原點,因為ul>li預設有前置點*/
+    text-decoration: none;  /*使文字沒有裝飾,因為a預設有下劃線*/
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 100%;
+    line-height: 1.5; 
+    font-family: "蘋方-繁", "微軟繁黑體-標準", "微軟繁黑體-粗體", "微軟正黑體", sans-serif;
+}
+h1, h2, h3 { line-height: 1; }  /*使如果視窗過小,文字下摺時不會間距太遠*/
+h1 *, h2 *, h3 * { font-size: 40px; }
+
+a {
+    display: inline-block;
+    color: inherit;
+}
+
+
+
+/*↓開始頁面css*/
+#page {
+    width: 100%;
+    min-height: 100vmin;
+    float: left; /*如果不浮動沒有高度*/
+    overflow-x: hidden;
+}
+
+
+.fl { float: left; }
+.fr { float: right; }
+
+.cf:before, .cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */  /*table表格元素永遠不會下摺,這是為防止螢幕變小時,表格可能沒有高度,所以先設空元素給他*/
+}
+
+.cf:after { clear: both; }
+
+.cf { *zoom: 1; }
+
+.img-100{
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+/*以下自己新增的*/
+.bgc-white { background-color: #F7F7F7; }
+.bgc-light { background-color: #f5f1e9; }
+.bgc-gray { background-color: #efefef; }
+.text-white { color: #F7F7F7; }
+.text-black { color: #28292a; }
+
+/*可以給內容用的css*/
+.mask {/*header swiper-slide mask div 蓋一個漸層半透明色塊到swiper圖片上*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    background: #1b242b;
+}
+
+
+
+/*header picture*/
+header { height: 90vh; } /*vh:viewport-height視窗高度,vh90:符合視窗高度90%*/
+
+header .header-container {
+    z-index: 0;  /*使header-container在nav的後面(nav的圖層為0)*/
+    width: 100%;
+    height: 100%;
+}
+header .header-picture {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;  /*使圖片符合外框架大小,超過的不顯示*/
+    background-size: cover;  /*如果值為contain,會在框架裡顯示原始圖片比例,不足的留白*/
+}
+header .container {
+    padding: 20vh 0 0 0;
+}
+header .logo-wrap{  /*如果要放logo圖片在header可以用這個css*/
+    width: 40%;
+    min-width: 300px;
+    display: inline-block;
+    background-image: url("../images/logowhite.svg");  /*圖片位置*/
+    -webkit-background-size:100%;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    min-height: 35vh;
+}
+
+
+/*影像輪播*/
+header .photo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*    top: -10%;*/
+    overflow: hidden!important;
+    left: 0;
+
+}
+
+.vid-outer, .vid-outer * {
+    -webkit-transition: all ease-in-out .25s;
+    -o-transition: all ease-in-out .25s; 
+    transition: all ease-in-out .25s; 
+    background-image: transparent ; 
+    background-position: 50% 50%; 
+    background-repeat: no-repeat;
+}
+.vid-outer video,
+.vid-outer #video,
+.vid-outer .iframe,
+.vid-outer iframe,
+.vid-outer.device * { 
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /*    min-width: 100%;*/
+    /*    height: 100%;*/
+}
+header .mask {
+    position: absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all ease-in-out .35s;
+    -o-transition: all ease-in-out .35s;
+    transition: all ease-in-out .35s;
+    opacity:0.7;
+}
+
+.svg-logo{
+    width: 80%;
+}
+.svg-logo.idx, .svg-logo.idx img{
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/*影像輪播 end*/
+
+
+
+
+/*article section*/
+
+section .line {/*svg arrow use*/
+    width: 30%;
+    min-width: 200px;
+    min-height: 5vh;
+    display: inline-block;
+    margin: 0 auto 0px auto;
+    -webkit-background-size:100%;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-image: url("../images/lineuncle.svg");
+}
+section h2 {
+    word-spacing: 20px;
+}
+.article-content { /*less content use*/
+    width: 80%;
+    max-width: 760px;
+    float: none;
+    margin: 0 auto;
+}
+.article-content p{
+    float: left;
+    width: 100%;
+    color: #313131;
+    font-size: 1em;
+    line-height: 2;
+    text-align: justify;
+    text-indent: 2em;
+    /*letter-spacing: 16px;*/ /*使字之間有間距*/
+    /*word-spacing: 18px;*/  /*可使空格之間的間距更大*/
+} 
+#contact p {
+    text-indent: 0;
+}
+
+section .line2 {/*svg arrow use*/
+    width: 30%;
+    min-width: 200px;
+    min-height: 5vh;
+    display: inline-block;
+    margin: 0 auto 0px auto;
+    -webkit-background-size:100%;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-image: url("../images/lineart.svg");
+}
+
+
+.article-content2 { /*less content use*/
+    width: 95%;
+    max-width: 900px;
+    float: none;
+    margin: 0 auto;
+}
+
+.section-item{
+    display:block;
+    margin-top: 30%;
+    padding:50px 0;
+}
+
+.section-content-wrap{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    margin: -48px -20px 0;
+    padding: 18px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #444444;
+    background: #f9f6f0;
+    background:-webkit-gradient(linear, to bottom, to top, color-stop(0%, rgba(255,255,255,0.9)), color-stop(60%, #f9f6f0));
+    background:-webkit-linear-gradient(to bottom, rgba(250,247,241,0.8) 0%, #f9f6f0 60%);
+    background:-moz-linear-gradient(to bottom, rgba(250,247,241,0.8) 0%, #f9f6f0 60%);
+    background:-o-linear-gradient(to bottom, rgba(250,247,241,0.8) 0%, #f9f6f0 60%);
+    background:linear-gradient(to bottom, rgba(250,247,241,0.8) 0%,#f9f6f0 60%)}
+
+.section-content-wrap2{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    margin:-70px -20px 0 -80px;
+    padding: 18px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #444444;
+    background: white;
+    background:-webkit-gradient(linear, to bottom, to top, color-stop(0%, rgba(255,255,255,0.9)), color-stop(60%, #fff));
+    background:-webkit-linear-gradient(to bottom, rgba(250,247,241,0.8) 0%, #fff 60%);
+    background:-moz-linear-gradient(to bottom, rgba(250,247,241,0.8) 0%, #fff 60%);
+    background:-o-linear-gradient(to bottom, rgba(250,247,241,0.8) 0%, #fff 60%);
+    background:linear-gradient(to bottom, rgba(250,247,241,0.8) 0%,#ffffff 60%)}
+
+
+section h3 {
+    text-align: left;
+    color: #168b82;
+    line-height: 2;
+    font-size: 1.8em;
+}
+section h5 {
+    text-align: left;
+    font-size: 1em;
+    color: #9B9692;
+    line-height: 1;
+}
+section p {
+    text-align: left;
+    color: #28292a;
+    line-height: 2;
+}
+.readmore{
+    display: block;
+    margin-top: 12px;
+    text-align: right;
+    font-weight: bold;
+    color: #c45d40;
+    letter-spacing:2px
+}
+.readmore a:hover {
+    color: #F2734F;
+}
+
+footer {
+    background-color: #CC684D;   
+    text-align: center;
+    font-size: 0.9em;
+}
+.footer-logo {
+    width: 20%;
+    min-width: 200px;
+    display: inline-block;
+    background-image: url("../images/logowhite.svg");  /*圖片位置*/
+    -webkit-background-size:100%;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    min-height: 17vh;
+}
+
+#gotop {
+    position: fixed;
+    height:50px;
+    width:50px;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    border-radius:20%;
+    background-color: #128980;
+    line-height: 45px;
+    color: white;
+    font-size: 25px;
+}
+@media screen and (min-width:801px) and (max-width:1200px) {
+
+}
+
+@media screen and (min-width:300px) and (max-width:800px) {
+    header .photo {
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        float: left;
+        overflow: hidden;
+        background-position: center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    section h2 {
+        word-spacing: 3px;
+    }
+    section h3 {
+        font-size: 1.8em;
+    }
+    .vid-outer{
+        display: none;
+    }
+
+    footer p {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (min-width:641px) and (max-width:800px) {
+    header .logo-wrap{  /*如果要放logo圖片在header可以用這個css*/
+        min-height: 20vh;
+    }
+    .section-item{
+        display:block;
+        margin-top: 50%;
+        padding:50px 0;
+    }
+    .footer-logo {
+        min-height: 10vh;
+    }
+}
+
+@media screen and (min-width:300px) and (max-width:640px) {
+    .section-item{
+        width: 85%;
+        display:block;
+        margin: -30px auto;
+        padding:50px 0;
+    }
+
+}

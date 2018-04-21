@@ -1,0 +1,175 @@
+#wrapper{
+/*    max-width:1120px;*/
+    margin:0 auto;
+}
+/*=========== nav ============*/
+nav{
+    height:120px;
+}
+.image{
+    display:block;
+    width:100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+nav .gw-8 .gw-2{
+    margin-top:45px;
+}
+nav .gw-8 .gw-2 a{
+    text-decoration: none;
+}
+/*=========== nav end ============*/
+/*=========== header ============*/
+header > div{
+    height: 500px;
+}
+/*=========== hearder end ============*/
+/*=========== article ============*/
+
+
+/*=========== article end ============*/
+
+section .line3 {/*svg arrow use*/
+    width: 30%;
+    min-width: 200px;
+    min-height: 5vh;
+    display: inline-block;
+    margin: 0 auto 0px auto;
+    -webkit-background-size:100%;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-image: url("../images/linecontact.svg");
+}
+#contact p {
+    text-align: center;
+}
+.contact-content {/*less content use*/
+    width: 80%;
+    max-width: 760px;
+    float: none;
+    margin: 0 auto;
+}
+
+form#web-form {
+    color: #313131;
+}
+
+form#web-form div {
+    margin-bottom: 5px;
+}
+
+form#web-form label {
+    float: left;
+    width: 20%;
+    min-width: 120px;
+    text-align: right;
+    padding: 5px 1em 0px 10px;
+    font-size: 1.15em;
+}
+
+form#web-form input[type="text"],
+form#web-form input[type="tel"],
+form#web-form input[type="email"],
+form#web-form textarea {
+    width: 65%;
+    line-height: 2;
+    font-size: 1.15em;
+    resize: none;  /*使訊息欄無法自由拖曳大小*/
+    padding: 3px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid #c45d40;
+}
+
+form#web-form label[data-required]:after {
+    content: " * ";
+    display: inline-block;
+    color: #EF233C;
+    font-size: 1em;
+}
+
+form#web-form div:last-of-type {
+    text-align: center;
+    margin-top: 30px;
+}
+
+form#web-form .ui-btn {
+    padding: 10px 1em;
+}
+
+form#web-form input[type="text"]:focus,
+form#web-form input[type="tel"]:focus,
+form#web-form input[type="email"]:focus,
+form#web-form textarea:focus {
+    border-bottom: 1px solid #3A3D0B;
+    -webkit-transition: all ease-in-out .35s;
+    -o-transition: all ease-in-out .35s;
+    transition: all ease-in-out .35s;
+    border: none;
+    border-bottom: 1px solid #F15946;
+}
+
+form#web-form .ui-btn {
+    border: none;
+    outline: none;
+    background-color: #c45d40;
+    color: #f7f7f7;
+    border-radius: 10px;
+    font-size: 20px;
+}
+form#web-form .ui-btn:hover {
+    border: none;
+    outline: none;
+    background-color: #F15946;
+    color: #f7f7f7;
+    cursor: pointer;
+}
+.ui-btn, .ui-btn:after {
+    -webkit-transition: all ease-in-out .3s;
+    -o-transition: all ease-in-out .3s;
+    transition: all ease-in-out .3s;
+}
+#gotop {
+    position: fixed;
+    height:50px;
+    width:50px;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    border-radius:20%;
+    background-color: #128980;
+    line-height: 45px;
+    color: white;
+    font-size: 25px;
+}
+@media screen and (min-width: 300px) and (max-width: 800px) {
+
+
+    form#web-form input:not([type="submit"]), form#ss-form label, form#ss-form textarea {
+        width: 96%;
+        float: left;
+        margin: 7px; 0 1.5% 1.5%;
+        text-align: left;
+        font-size: 1.2em;
+    }
+    form#web-form {
+        float: left;
+        margin-top: 1em;
+        margin-bottom: 5em;
+        width: 100%;
+    }
+    form#web-form textarea {
+        width: 96%;
+        line-height: 2;
+        font-size: 1.15em;
+        resize: none;  /*使訊息欄無法自由拖曳大小*/
+        padding: 3px;
+        border: none;
+        outline: none;
+        background: none;
+        border-bottom: 1px solid #c45d40;
+    }
+
+}

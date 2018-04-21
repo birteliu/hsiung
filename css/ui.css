@@ -1,0 +1,37 @@
+.bgColor{
+    background-color: #f9F9F9;
+}
+
+.bgColor2{
+    background-color: rgba(245, 241, 233, 0.64);
+    /*內文內距0.5em*/
+}
+.bgColor3{
+    background-color: #128980;
+}
+.bgColor4{
+    background-color: #c45d40;
+}
+.fontColor1{
+    color:#2A2B2C;
+}
+.fontColor2{
+    color: #c45d40;
+}
+.fontColor3{
+    color:#D19159;
+}
+.fontColor3{
+    color:#128980;
+}
+.fontColor4{
+    color:#f9F9F9;
+}
+.padding-inside{
+    padding: 2%;
+}
+.img-100{
+    width: 100%;
+    display: block;
+    margin: 0;
+}
